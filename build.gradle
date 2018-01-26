@@ -5,6 +5,7 @@ apply plugin: 'findbugs'
 apply plugin: 'pmd'
 apply plugin: 'checkstyle'
 apply plugin: 'jacoco'
+apply plugin: 'jdepend'
 
 repositories {
   mavenCentral()
@@ -61,6 +62,11 @@ pmd {
 
 checkstyle {
     toolVersion = '7.2'
+    ignoreFailures = true
+    sourceSets = [sourceSets.main]
+}
+
+jdepend {
     ignoreFailures = true
     sourceSets = [sourceSets.main]
 }
