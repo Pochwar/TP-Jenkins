@@ -22,7 +22,7 @@ findbugs {
   reportsDir = file("$project.buildDir/reports/findbugs")
   effort = "max"
   showProgress = true
-    reportLevel = "high"
+  reportLevel = "high"
 }
 
 pmd {
