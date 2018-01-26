@@ -15,7 +15,7 @@ import com.imie.tp.calculator.utils.KeyboardUtils;
 public final class Application {
 
     /**
-     * Constant string for equality
+     * Constant string for equality.
      */
     private static final String EQUALS = " = ";
 
@@ -92,7 +92,11 @@ public final class Application {
 
         addition.make(values[1]);
 
-        final String operation = values[0] + " + " + values[1] + EQUALS + addition.getCurrentValue();
+        final String operation = values[0]
+                + " + "
+                + values[1]
+                + EQUALS
+                + addition.getCurrentValue();
 
         System.out.println(operation);
         recordValues(operation);
@@ -104,7 +108,11 @@ public final class Application {
 
         substraction.make(values[1]);
 
-        final String operation = values[0] + " - " + values[1] + EQUALS + substraction.getCurrentValue();
+        final String operation = values[0]
+                + " - "
+                + values[1]
+                + EQUALS
+                + substraction.getCurrentValue();
 
         System.out.println(operation);
         recordValues(operation);
@@ -116,7 +124,11 @@ public final class Application {
 
         division.make(values[1]);
 
-        final String operation = values[0] + " / " + values[1] + EQUALS + division.getCurrentValue();
+        final String operation = values[0]
+                + " / "
+                + values[1]
+                + EQUALS
+                + division.getCurrentValue();
 
         System.out.println(operation);
         recordValues(operation);
@@ -128,7 +140,11 @@ public final class Application {
 
         multiplication.make(values[1]);
 
-        final String operation = values[0] + " * " + values[1] + EQUALS + multiplication.getCurrentValue();
+        final String operation = values[0]
+                + " * "
+                + values[1]
+                + EQUALS
+                + multiplication.getCurrentValue();
 
         System.out.println(operation);
         recordValues(operation);

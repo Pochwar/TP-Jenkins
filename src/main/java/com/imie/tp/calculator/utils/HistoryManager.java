@@ -17,7 +17,7 @@ public class HistoryManager {
     /**
      * History list.
      */
-    transient final private ArrayList<String> cache = new ArrayList<String>();
+    private final transient ArrayList<String> cache = new ArrayList<String>();
 
     /**
      * Singleton method to get HistoryManager instance.
@@ -30,7 +30,7 @@ public class HistoryManager {
      * Add an operation to the list.
      * @param operation
      */
-    final public void addOperation(final String operation) {
+    public final void addOperation(final String operation) {
         this.cache.add(operation);
     }
 
