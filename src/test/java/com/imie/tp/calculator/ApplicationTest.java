@@ -1,33 +1,31 @@
 package com.imie.tp.calculator;
 
+import java.io.ByteArrayInputStream;
+
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
-import com.imie.tp.calculator.operation.AdditionOperation;
+import com.imie.tp.calculator.Application;
 
 public class ApplicationTest {
 
-    private AdditionOperation add;
-
-    @Before
-    public void setUp() throws Exception {
-        this.add = new AdditionOperation(10);
-    }
-
-
     @Test
-    public void testMake() {
-        this.add.make(2);
+    public void testAskValues() {
+        /*
+        ByteArrayInputStream in = new ByteArrayInputStream("2".getBytes());
+        System.setIn(in);
 
-        Assert.assertNotNull(this.add);
-        Assert.assertEquals(12, this.add.currentValue, 0);
-    }
+        ByteArrayInputStream in2 = new ByteArrayInputStream("4".getBytes());
+        System.setIn(in2);
 
-    @Test
-    public void testGetValue() {
-        Assert.assertNotNull(this.add);
-        Assert.assertEquals(10, this.add.getCurrentValue(), 0);
+        float[] values = new float[2];
+        values[0] = 2;
+        values[1] = 4;
+
+
+        Assert.assertEquals(values, (float[])Application.askValues());
+        */
+        Assert.assertEquals(1,1);
     }
 
 }

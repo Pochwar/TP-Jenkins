@@ -150,7 +150,7 @@ public final class Application {
         recordValues(operation);
     }
 
-    private static float[] askValues() {
+    public static float[] askValues() {
         float[] valuesArray;
         valuesArray = new float[2];
 
@@ -160,12 +160,12 @@ public final class Application {
         return valuesArray;
     }
 
-    private static void recordValues(final String operation) {
+    public static void recordValues(final String operation) {
         final HistoryManager historyManager = HistoryManager.getInstance();
         historyManager.addOperation(operation);
     }
 
-    private static void displayHistory() {
+    public static void displayHistory() {
         final HistoryManager historyManager = HistoryManager.getInstance();
 
         System.out.println(historyManager.getHistory());
