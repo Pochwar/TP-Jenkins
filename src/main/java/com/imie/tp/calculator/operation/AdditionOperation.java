@@ -1,5 +1,10 @@
 package com.imie.tp.calculator.operation;
 
+/**
+ * Addition class.
+ * @author poch
+ *
+ */
 public class AdditionOperation extends OperationCommandBase {
 
     public AdditionOperation(float baseValue) {

@@ -1,16 +1,21 @@
 package com.imie.tp.calculator;
 
-import com.imie.tp.calculator.utils.KeyboardUtils;
-import com.imie.tp.calculator.utils.HistoryManager;
 import com.imie.tp.calculator.operation.AdditionOperation;
-import com.imie.tp.calculator.operation.SubstractionOperation;
-import com.imie.tp.calculator.operation.MultiplicationOperation;
 import com.imie.tp.calculator.operation.DivisionOperation;
+import com.imie.tp.calculator.operation.MultiplicationOperation;
+import com.imie.tp.calculator.operation.SubstractionOperation;
+import com.imie.tp.calculator.utils.HistoryManager;
+import com.imie.tp.calculator.utils.KeyboardUtils;
 
+/**
+ * Application class for Calculator program.
+ * @author poch
+ *
+ */
 public final class Application {
 
     /**
-     * Constructor
+     * Constructor.
      */
     private Application() {}
 
@@ -39,22 +44,22 @@ public final class Application {
                     break;
 
                 case 1:
-                    Addition();
+                    addition();
                     task = 0;
                     break;
 
                 case 2:
-                    Substraction();
+                    substraction();
                     task = 0;
                     break;
 
                 case 3:
-                    Division();
+                    division();
                     task = 0;
                     break;
 
                 case 4:
-                    Multiplication();
+                    multiplication();
                     task = 0;
                     break;
 
@@ -76,7 +81,7 @@ public final class Application {
         }
     }
 
-    private static void Addition() {
+    private static void addition() {
         float[] values = askValues();
         AdditionOperation addition = new AdditionOperation(values[0]);
 
@@ -88,7 +93,7 @@ public final class Application {
         recordValues(operation);
     }
 
-    private static void Substraction() {
+    private static void substraction() {
         float[] values = askValues();
         SubstractionOperation substraction = new SubstractionOperation(values[0]);
 
@@ -100,7 +105,7 @@ public final class Application {
         recordValues(operation);
     }
 
-    private static void Division() {
+    private static void division() {
         float[] values = askValues();
         DivisionOperation division = new DivisionOperation(values[0]);
 
@@ -112,7 +117,7 @@ public final class Application {
         recordValues(operation);
     }
 
-    private static void Multiplication() {
+    private static void multiplication() {
         float[] values = askValues();
         MultiplicationOperation multiplication = new MultiplicationOperation(values[0]);
 

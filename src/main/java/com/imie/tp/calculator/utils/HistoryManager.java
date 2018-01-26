@@ -2,6 +2,11 @@ package com.imie.tp.calculator.utils;
 
 import java.util.ArrayList;
 
+/**
+ * Class to manage history of operations.
+ * @author poch
+ *
+ */
 public class HistoryManager {
 
     // Singleton

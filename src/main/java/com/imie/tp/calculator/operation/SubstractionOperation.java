@@ -1,5 +1,10 @@
 package com.imie.tp.calculator.operation;
 
+/**
+ * Substraction class.
+ * @author poch
+ *
+ */
 public class SubstractionOperation extends OperationCommandBase {
 
     public SubstractionOperation(float baseValue) {
