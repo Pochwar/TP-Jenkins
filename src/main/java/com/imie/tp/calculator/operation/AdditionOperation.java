@@ -8,13 +8,12 @@ public class AdditionOperation extends OperationCommandBase {
 
     @Override
     public void make(float value) {
-        // TODO Auto-generated method stub
+        this.currentValue += value;
 
     }
 
     public float getCurrentValue() {
-        // TODO Auto-generated method stub
-        return 0;
+        return this.currentValue;
     }
 
 }
