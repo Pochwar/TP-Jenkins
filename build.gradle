@@ -103,4 +103,5 @@ check.dependsOn cpdMain
 jacoco {
     toolVersion = "0.7.9"
     reportsDir = file("$buildDir/customJacocoReportDir")
+    sourceSets = [sourceSets.main]
 }
