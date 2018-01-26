@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import com.imie.tp.calculator.operation.MultiplicationOperation;
 
-public class AdditionMultiplicationTest {
+public class MultiplicationOperationTest {
 
     private MultiplicationOperation mult;
 

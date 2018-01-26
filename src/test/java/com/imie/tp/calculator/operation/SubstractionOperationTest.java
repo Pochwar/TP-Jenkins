@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import com.imie.tp.calculator.operation.SubstractionOperation;
 
-public class AdditionSubstractionTest {
+public class SubstractionOperationTest {
 
     private SubstractionOperation sub;
 
