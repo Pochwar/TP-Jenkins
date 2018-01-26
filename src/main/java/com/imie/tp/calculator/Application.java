@@ -1,6 +1,11 @@
 package com.imie.tp.calculator;
 
 import com.imie.tp.calculator.utils.KeyboardUtils;
+import com.imie.tp.calculator.utils.HistoryManager;
+import com.imie.tp.calculator.operation.AdditionOperation;
+import com.imie.tp.calculator.operation.SubstractionOperation;
+import com.imie.tp.calculator.operation.MultiplicationOperation;
+import com.imie.tp.calculator.operation.DivisionOperation;
 
 public final class Application {
 
@@ -16,46 +21,46 @@ public final class Application {
      */
     public static void main(String[] args) {
 
-        // Process...
-        // Display & Ask "Type of Operation ":
-        //               - 1 : Addition
-        //               - 2 : Subtraction
-        //               - 3 : Divide
-        //               - 4 : Multiplication
-        //               - 5 : Display History
-        //               - 9 : Quit
-
-        // If enter 1
-        // Display & Ask "Enter Value a : "
-        // Display & Ask "Enter Value b : "
-        // after
-        // Display : result
-
-        // If enter 5
-        // Display last calculate :
-        //    1 + 1 = 2
-        //    2 * 3 = 6
-
-        // If enter 9 => Quit application
-
-        //TODO
         boolean running = true;
         Integer task = 0;
         String menu = "Type of Operation :"
-                /*
                 + "\n- 1 : Addition"
                 + "\n- 2 : Subtraction"
                 + "\n- 3 : Divide"
                 + "\n- 4 : Multiplication"
                 + "\n- 5 : Display History"
                 + "\n- 9 : Quit"
-                */
                 ;
 
         while (running) {
             switch (task) {
                 case 0:
                     task = Integer.parseInt(KeyboardUtils.readFromKeyboard(menu));
+                    break;
+
+                case 1:
+                    Addition();
+                    task = 0;
+                    break;
+
+                case 2:
+                    Substraction();
+                    task = 0;
+                    break;
+
+                case 3:
+                    Division();
+                    task = 0;
+                    break;
+
+                case 4:
+                    Multiplication();
+                    task = 0;
+                    break;
+
+                case 5:
+                    displayHistory();
+                    task = 0;
                     break;
 
                 case 9:
@@ -68,8 +73,76 @@ public final class Application {
                     break;
             }
 
-
         }
+    }
+
+    private static void Addition() {
+        float[] values = askValues();
+        AdditionOperation addition = new AdditionOperation(values[0]);
+
+        addition.make(values[1]);
+
+        String operation = values[0] + " + " + values[1] + " = " + addition.getCurrentValue();
+
+        System.out.println(operation);
+        recordValues(operation);
+    }
+
+    private static void Substraction() {
+        float[] values = askValues();
+        SubstractionOperation substraction = new SubstractionOperation(values[0]);
+
+        substraction.make(values[1]);
+
+        String operation = values[0] + " - " + values[1] + " = " + substraction.getCurrentValue();
+
+        System.out.println(operation);
+        recordValues(operation);
+    }
+
+    private static void Division() {
+        float[] values = askValues();
+        DivisionOperation division = new DivisionOperation(values[0]);
+
+        division.make(values[1]);
+
+        String operation = values[0] + " / " + values[1] + " = " + division.getCurrentValue();
+
+        System.out.println(operation);
+        recordValues(operation);
+    }
+
+    private static void Multiplication() {
+        float[] values = askValues();
+        MultiplicationOperation multiplication = new MultiplicationOperation(values[0]);
+
+        multiplication.make(values[1]);
+
+        String operation = values[0] + " * " + values[1] + " = " + multiplication.getCurrentValue();
+
+        System.out.println(operation);
+        recordValues(operation);
+    }
+
+    private static float[] askValues() {
+        float[] valuesArray;
+        valuesArray = new float[2];
+
+        valuesArray[0] = Float.parseFloat(KeyboardUtils.readFromKeyboard("Enter value A"));
+        valuesArray[1] = Float.parseFloat(KeyboardUtils.readFromKeyboard("Enter value B"));
+
+        return valuesArray;
+    }
+
+    private static void recordValues(String operation) {
+        HistoryManager historyManager = HistoryManager.getInstance();
+        historyManager.addOperation(operation);
+    }
+
+    private static void displayHistory() {
+        HistoryManager historyManager = HistoryManager.getInstance();
+
+        System.out.println(historyManager.getHistory());
     }
 
 }
