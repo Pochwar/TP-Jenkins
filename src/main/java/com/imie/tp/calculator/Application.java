@@ -15,6 +15,11 @@ import com.imie.tp.calculator.utils.KeyboardUtils;
 public final class Application {
 
     /**
+     * Constant string for equality
+     */
+    private static final String EQUALS = " = ";
+
+    /**
      * Constructor.
      */
     private Application() {}
@@ -24,11 +29,11 @@ public final class Application {
      *
      * @param args
      */
-    public static void main(String[] args) {
+    public static void main(final String... args) {
 
         boolean running = true;
         Integer task = 0;
-        String menu = "Type of Operation :"
+        final String menu = "Type of Operation :"
                 + "\n- 1 : Addition"
                 + "\n- 2 : Subtraction"
                 + "\n- 3 : Divide"
@@ -82,48 +87,48 @@ public final class Application {
     }
 
     private static void addition() {
-        float[] values = askValues();
-        AdditionOperation addition = new AdditionOperation(values[0]);
+        final float[] values = askValues();
+        final AdditionOperation addition = new AdditionOperation(values[0]);
 
         addition.make(values[1]);
 
-        String operation = values[0] + " + " + values[1] + " = " + addition.getCurrentValue();
+        final String operation = values[0] + " + " + values[1] + EQUALS + addition.getCurrentValue();
 
         System.out.println(operation);
         recordValues(operation);
     }
 
     private static void substraction() {
-        float[] values = askValues();
-        SubstractionOperation substraction = new SubstractionOperation(values[0]);
+        final float[] values = askValues();
+        final SubstractionOperation substraction = new SubstractionOperation(values[0]);
 
         substraction.make(values[1]);
 
-        String operation = values[0] + " - " + values[1] + " = " + substraction.getCurrentValue();
+        final String operation = values[0] + " - " + values[1] + EQUALS + substraction.getCurrentValue();
 
         System.out.println(operation);
         recordValues(operation);
     }
 
     private static void division() {
-        float[] values = askValues();
-        DivisionOperation division = new DivisionOperation(values[0]);
+        final float[] values = askValues();
+        final DivisionOperation division = new DivisionOperation(values[0]);
 
         division.make(values[1]);
 
-        String operation = values[0] + " / " + values[1] + " = " + division.getCurrentValue();
+        final String operation = values[0] + " / " + values[1] + EQUALS + division.getCurrentValue();
 
         System.out.println(operation);
         recordValues(operation);
     }
 
     private static void multiplication() {
-        float[] values = askValues();
-        MultiplicationOperation multiplication = new MultiplicationOperation(values[0]);
+        final float[] values = askValues();
+        final MultiplicationOperation multiplication = new MultiplicationOperation(values[0]);
 
         multiplication.make(values[1]);
 
-        String operation = values[0] + " * " + values[1] + " = " + multiplication.getCurrentValue();
+        final String operation = values[0] + " * " + values[1] + EQUALS + multiplication.getCurrentValue();
 
         System.out.println(operation);
         recordValues(operation);
@@ -139,13 +144,13 @@ public final class Application {
         return valuesArray;
     }
 
-    private static void recordValues(String operation) {
-        HistoryManager historyManager = HistoryManager.getInstance();
+    private static void recordValues(final String operation) {
+        final HistoryManager historyManager = HistoryManager.getInstance();
         historyManager.addOperation(operation);
     }
 
     private static void displayHistory() {
-        HistoryManager historyManager = HistoryManager.getInstance();
+        final HistoryManager historyManager = HistoryManager.getInstance();
 
         System.out.println(historyManager.getHistory());
     }

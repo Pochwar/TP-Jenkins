@@ -7,7 +7,15 @@ package com.imie.tp.calculator.operation;
  */
 public interface OperationCommand {
 
-    void make(float value);
+    /**
+     * Method to make operation.
+     * @param value
+     */
+    void make(final float value);
 
+    /**
+     * Method to get the current value.
+     * @return
+     */
     float getCurrentValue();
 }

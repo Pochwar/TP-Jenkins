@@ -9,27 +9,48 @@ import java.util.ArrayList;
  */
 public class HistoryManager {
 
-    // Singleton
-    private static final HistoryManager instance = new HistoryManager();
+    /**
+     * HistoryManager instance.
+     */
+    private static final HistoryManager INSTANCE = new HistoryManager();
+
+    /**
+     * History list.
+     */
+    transient final private ArrayList<String> cache = new ArrayList<String>();
+
+    /**
+     * Singleton method to get HistoryManager instance.
+     */
     public static HistoryManager getInstance() {
-        return instance;
+        return INSTANCE;
     }
 
-    private ArrayList<String> cache = new ArrayList<String>();
-
-    public void addOperation(String operation) {
+    /**
+     * Add an operation to the list.
+     * @param operation
+     */
+    final public void addOperation(final String operation) {
         this.cache.add(operation);
     }
 
+    /**
+     * Clear the list.
+     */
     public void clear() {
         this.cache.clear();
     }
 
+    /**
+     * Get the list.
+     * @return
+     */
     public String getHistory() {
-        StringBuilder stringBuilder = new StringBuilder();
+        final StringBuilder stringBuilder = new StringBuilder();
 
-        for (String string : cache) {
-            stringBuilder.append(string + "\n");
+        for (final String string : cache) {
+            stringBuilder.append(string);
+            stringBuilder.append('\n');
         }
 
         return stringBuilder.toString();

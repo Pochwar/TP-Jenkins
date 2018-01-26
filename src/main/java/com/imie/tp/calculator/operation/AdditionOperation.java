@@ -5,18 +5,30 @@ package com.imie.tp.calculator.operation;
  * @author poch
  *
  */
-public class AdditionOperation extends OperationCommandBase {
+public class AdditionOperation extends AbstractOperationCommandBase {
 
-    public AdditionOperation(float baseValue) {
+    /**
+     * Method constructor.
+     * @param baseValue
+     */
+    public AdditionOperation(final float baseValue) {
         super(baseValue);
     }
 
+
+    /**
+     * Method to make the addition.
+     * @param value
+     */
     @Override
-    public void make(float value) {
+    public void make(final float value) {
         this.currentValue += value;
 
     }
 
+    /**
+     * Method to get the current value.
+     */
     public float getCurrentValue() {
         return this.currentValue;
     }

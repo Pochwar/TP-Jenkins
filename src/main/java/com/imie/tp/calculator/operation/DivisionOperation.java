@@ -5,14 +5,22 @@ package com.imie.tp.calculator.operation;
  * @author poch
  *
  */
-public class DivisionOperation extends OperationCommandBase {
+public class DivisionOperation extends AbstractOperationCommandBase {
 
-    public DivisionOperation(float baseValue) {
+    /**
+     * Method constructor.
+     * @param baseValue
+     */
+    public DivisionOperation(final float baseValue) {
         super(baseValue);
     }
 
+    /**
+     * Method to make the division.
+     * @param value
+     */
     @Override
-    public void make(float value) {
+    public void make(final float value) {
         if (value == 0) {
             this.currentValue = Integer.MIN_VALUE;
         } else {
@@ -20,6 +28,9 @@ public class DivisionOperation extends OperationCommandBase {
         }
     }
 
+    /**
+     * Method to get the current value.
+     */
     public float getCurrentValue() {
         return this.currentValue;
     }
