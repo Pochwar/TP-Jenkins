@@ -10,7 +10,5 @@ public final class KeyboardUtils {
         System.out.println(displayAsk);
 
         return keyboard.nextLine();
-
-        keyboard.close();
     }
 }
