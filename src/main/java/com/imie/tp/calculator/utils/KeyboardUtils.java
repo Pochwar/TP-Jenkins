@@ -9,8 +9,8 @@ import java.util.Scanner;
  */
 public final class KeyboardUtils {
 
+    @SuppressWarnings("resource")
     public static String readFromKeyboard(String displayAsk) {
-        @SuppressWarnings("resource")
         Scanner keyboard = new Scanner(System.in);
 
         System.out.println(displayAsk);
